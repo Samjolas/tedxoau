@@ -1,0 +1,301 @@
+/********* VARIABLE ************/
+$text-color-white: #ffffff;
+$main-color:#000000;
+$tedxred: #E62B1E;
+
+/********* MIXIN ************/
+@mixin font {
+  font-family: 'Open Sans', sans-serif;
+  font-style: none;
+  font-weight: 400;
+  font-size: 62.5%;
+  line-height: 1;
+}
+
+@mixin background {
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@mixin flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+
+/********* MAIN CODE ************/
+* {
+  margin: 0;
+  padding: auto;
+  box-sizing: border-box;
+}
+
+body, html {
+  @include font;
+  color: $main-color;
+}
+
+header {
+  margin: 4rem 9.6rem;
+  background: url(../resources/background.png);
+  @include background;
+  background-position: right;
+  border-radius: 4rem;
+  height: 100vh;
+}
+
+.nav {
+  position: relative;
+
+  &__logo {
+    position: absolute;
+    top: 0%;
+  }
+
+  &__div {
+    @include flexRow;
+    font-size: 5rem;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+
+    &__link {
+      list-style-type: none;
+      text-transform: uppercase;
+      margin: 1.6rem;
+
+      &--main {
+        text-decoration: none;
+        display: inline-block;
+        font-size: 1.6rem;
+        color: $main-color;
+      }
+    }
+  }
+}
+
+.heading {
+  position: relative;
+  height: 95vh;
+  
+  &__main {
+    position: absolute;
+    text-transform: capitalize;
+    color: $tedxred;
+    top: 30%;
+    left: 10%;
+    max-width: 82rem;
+    font-size: 11rem;
+  }
+
+  &__sub {
+    position: absolute;
+    max-width: 35rem;
+    top: 80%;
+    left: 10%;
+    font-size: 1.6rem;
+    line-height: 1.2;
+    text-transform: capitalize;
+  }
+}
+
+
+.about {
+  position: relative;
+  height: 150vh;
+
+
+  &__main {
+    position: absolute;
+    max-width: 82rem;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 4rem;
+    text-transform: capitalize;
+    //animation: aboutAnima 10s ease-out; delay iteration-count direction fill-mode
+  }
+}
+
+/**
+@keyframes aboutAnima {
+  0% {
+    transform: translateY(-50%);
+    transform: translateX(-50%);
+  }
+
+  50% {
+    transform: translateY(0%);
+    
+  }
+
+  100% {
+    transform: translateY(50%);
+    
+  }
+}
+
+**/
+
+.features {
+  margin: 7.6rem 7.4rem;
+  display: flex;
+  flex-direction: column;
+  text-transform: capitalize;
+}
+
+.community {
+  background: url(../resources/community_back.png);
+  @include background;
+  height: 82vh;
+  position: relative;
+}
+
+.impact {
+  height: 80vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+
+  &__main {
+    width: 48%;
+    background: url(../resources/impact_1.png);
+    @include background;
+    position: relative;
+    
+  }
+
+  &__sub {
+    width: 48%;
+    background: url(../resources/impact_2.png);
+    @include background;
+    position: relative;
+    
+  }
+}
+
+.text {
+
+  &__main {
+    position: absolute;
+    font-size: 6.4rem;
+    top: 10%;
+    left: 10%;
+    text-transform: capitalize;
+    color: $text-color-white;
+
+  }
+
+  &__sub {
+    position: absolute;
+    width: 36.5rem;
+    
+    font-size: 1.4rem;
+    color: $text-color-white;
+    top: 23%;
+    left: 10%;
+    line-height: 1.4;
+  }
+
+  &__btn {
+    position: absolute;
+    display: inline-block;
+    border: 1px solid $text-color-white;
+    border-radius: 10%;
+    padding: 1.5rem;
+    font-size: 2.4rem;
+    top: 40%;
+    left: 10%;
+    color: $text-color-white;
+
+    &:hover {
+      background: $text-color-white;
+      cursor: pointer;
+    }
+  }
+}
+
+.color {
+  background-color: $tedxred;
+  border: none;
+}
+
+.program {
+  background: url(../resources/program.png);
+  @include background;
+  height: 90vh;
+  position: relative;
+}
+
+.session {
+  background: url(../resources/session.png);
+  @include background;
+  height: 130vh;
+  position: relative;
+}
+
+.speaker {
+  text-transform: capitalize;
+  padding: 6rem 0;
+
+  &__title {
+    font-size: 19.2rem;
+    text-transform: capitalize;
+  }
+
+  &__div {
+    margin: 0 4rem;
+    @include flexRow;
+    justify-content: space-between;
+  }
+
+  &__box {
+    padding-right: 3rem;
+    border-right: .5px solid rgba(0, 0, 0, 0.3);
+
+    &__text1 {
+      font-size: 2.4rem;
+    }
+    &__text2 {
+      font-size: 1.6rem;
+      margin: 1rem 0;
+    }
+    &__text3 {
+      font-size: 1.4rem;
+      width: 29rem;
+    }
+  }
+}
+
+.footer {
+  @include flexRow;
+  justify-content: space-between;
+  background-color: $main-color;
+  padding: 6rem;
+  text-transform: capitalize;
+
+  &__div {
+    width: 33%;
+
+    &__link {
+      list-style: none;
+      font-size: 1.6rem;
+      margin-bottom: 3.5rem;
+      color: $text-color-white;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
